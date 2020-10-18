@@ -13,8 +13,11 @@ class CreateDocumentSamplesTable extends Migration
      */
     public function up()
     {
-        Schema::create('document_samples', function (Blueprint $table) {
+        Schema::create('document_templates', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->text('text');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateDocumentSamplesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('document_samples');
+        Schema::dropIfExists('document_templates');
     }
 }

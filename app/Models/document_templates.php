@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class document_samples extends Model
+class document_templates extends Model
 {
     use HasFactory;
 }

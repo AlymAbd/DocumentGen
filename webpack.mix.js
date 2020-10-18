@@ -11,7 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(['resources/js/app.js', 'resources/js/semantic.min.js'], 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]);
+    ]).autoload({
+        jquery: ['$', 'window.jQuery', 'jQuery'],
+    });
+
+mix.js('resources/js/contracts.js', 'public/js');
+mix.js(['resources/js/templates.js'],
+        'public/js');

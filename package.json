@@ -18,8 +18,10 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "ckeditor4": "^4.15.0",
         "fomantic-ui": "^2.8.7",
         "gulp": "^4.0.2",
-        "jquery": "^3.5.1"
+        "jquery": "^3.5.1",
+        "postcss-loader": "^3.0.0"
     }
 }
