@@ -8,6 +8,7 @@ $(document).ready(function(){
     var bin = $('#input_bin');
     var oop = $('#input_company_oop');
     var document_type = $('#input_document_type');
+    var doc_id = $('#doc_id');
     let id;
 
     $('#save_document').click(function(){
@@ -20,6 +21,7 @@ $(document).ready(function(){
         var val_bin = bin.val();
         var val_oop = oop.val();
         var val_doc_id = document_type.val();
+        var val_id = doc_id.val();
 
         $.ajax({
             headers: {
@@ -48,5 +50,12 @@ $(document).ready(function(){
         })
     })
 
+    $('#get_pdf').click(function(){
+        let URL = '/contracts/print_pdf?id=';
+        var id = doc_id.val();
+
+        window.location.href = URL + id;
+
+    })
 })
 

@@ -10986,6 +10986,7 @@ $(document).ready(function () {
   var bin = $('#input_bin');
   var oop = $('#input_company_oop');
   var document_type = $('#input_document_type');
+  var doc_id = $('#doc_id');
   var id;
   $('#save_document').click(function () {
     $('#form_inputs').addClass('loading');
@@ -10996,6 +10997,7 @@ $(document).ready(function () {
     var val_bin = bin.val();
     var val_oop = oop.val();
     var val_doc_id = document_type.val();
+    var val_id = doc_id.val();
     $.ajax({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -11021,6 +11023,11 @@ $(document).ready(function () {
         alert('Error AJAX');
       }
     });
+  });
+  $('#get_pdf').click(function () {
+    var URL = '/contracts/print_pdf?id=';
+    var id = doc_id.val();
+    window.location.href = URL + id;
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

@@ -29,7 +29,8 @@ class ContractsController extends Controller {
 
     public function view(Request $r)
     {
-
+        $doc = documents::where('id', '=', $r->input('id'))->get();
+        return response()->json($doc);
     }
 
     public function save(Request $r)

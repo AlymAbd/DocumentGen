@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/contracts', [App\Http\Controllers\ContractsController::class , 'index']);
-// Route::get('/contracts/view', [App\Http\Controllers\ContractsController::class, 'view']);
+Route::get('/contracts/view', [App\Http\Controllers\ContractsController::class, 'view']);
 Route::post('/contracts/save', [App\Http\Controllers\ContractsController::class, 'save']);
 // Route::get('/contracts/remove', [App\Http\Controllers\ContractsController::class, 'remove']);
 // Route::get('/contracts/edit', [App\Http\Controllers\ContractsController::class, 'edit']);

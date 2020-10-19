@@ -45,7 +45,7 @@
                             <input type="text" id="input_bin">
                         </div>
                         <div class="field">
-                            <label>Договора</label>
+                            <label>Договор</label>
                             <div class="ui selection dropdown">
                                 <input type="hidden" id="input_document_type" name="gender">
                                 <i class="dropdown icon"></i>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="ui buttons">
                             <div id="save_document" class="ui button">Сохранить</div>
-                                <div id="get_pdf" class="ui button disabled">Скачать</div>
+                            <div id="get_pdf" class="ui button disabled">Скачать</div>
                             <div id="destroy_form" class="ui button">Очистить</div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         @foreach($docs as $key)
                             <div class="item">
                                 <div class="middle aligned content">
-                                    <a value={{ $key["id"] }}>Номер: {{ $key["number"] }}, компания: {{ $key["company_name"] }}</a>
+                                    <a id="refill_form" value={{ $key["id"] }}>Номер: {{ $key["number"] }}, компания: {{ $key["company_name"] }}</a>
                                 </div>
                             </div>
                         @endforeach
