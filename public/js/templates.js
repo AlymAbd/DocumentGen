@@ -10982,6 +10982,7 @@ $(document).ready(function () {
   window.ist = null;
   $('#save_document').click(function () {
     var text_data = CKEDITOR.instances.wysiwygeditor.getData();
+    $('#save_document').text("ЩА ВСЁ БУДЕТ");
     $.ajax({
       method: "POST",
       url: "/contracts/templates/save",
@@ -10989,10 +10990,13 @@ $(document).ready(function () {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
       data: {
-        text: text_data
+        text: text_data,
+        name: function name() {
+          return $('#input_document_name').val();
+        }
       },
       success: function success(data) {
-        console.log(data);
+        $('#save_document').text("Сохранено");
       },
       error: function error() {
         alert('Error');

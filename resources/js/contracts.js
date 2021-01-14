@@ -43,6 +43,7 @@ $(document).ready(function(){
                 $('#doc_id').val(id);
                 $('#get_pdf').toggleClass('disabled');
                 $('#form_inputs').toggleClass('loading');
+                console.log(val_doc_id);
             },
             error: function(){
                 alert('Error AJAX');
@@ -57,5 +58,39 @@ $(document).ready(function(){
         window.location.href = URL + id;
 
     })
+
+    $('#refill_form').click(function(){
+        val = $(this).attr('value');
+
+        $('#form_inputs').addClass('loading');
+
+        $.ajax({
+            method: "GET",
+            url: '/contracts/view',
+            data: {
+                id: val
+            },
+            success: function(data){
+                console.log(data);
+                data = data[0];
+                company.val(data['company_name']);
+                legal_name.val(data['legal_name']);
+                director.val(data['director']);
+                sign.val(data['signature']);
+                bin.val(data['bin']);
+                oop.val(data['legal_type']);
+                document_type.val(data['document']);
+                doc_id.val(data['id']);
+
+                $('#form_inputs').toggleClass('loading');
+            },
+            error: function(){
+                alert('сломался');
+            }
+        })
+    })
+
+
+
 })
 

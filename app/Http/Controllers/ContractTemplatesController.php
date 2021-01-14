@@ -17,8 +17,11 @@ class ContractTemplatesController extends Controller {
 
     public function save(Request $r)
     {
+        $name = $r->input('name');
+        $doc_name = ($name ? $name: $this->doc_type);
+
         $doc = new document_templates();
-        $doc->type = $this->doc_type;
+        $doc->type = $doc_name;
         $doc->text =$r->input('text');
         $doc->is_active =true;
         $doc->save();
