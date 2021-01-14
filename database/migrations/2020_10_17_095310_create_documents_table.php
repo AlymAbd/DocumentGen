@@ -22,7 +22,7 @@ class CreateDocumentsTable extends Migration
             $table->string('signature', 255);
             $table->string('bin', 255);
             $table->integer('legal_type');
-            $table->integer('document_type');
+            $table->integer('document');
             $table->boolean('is_deleted')->default(false);
             $table->boolean('pdf_ready')->default(false);
             $table->timestamps();

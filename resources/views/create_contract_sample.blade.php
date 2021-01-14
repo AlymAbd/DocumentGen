@@ -18,7 +18,10 @@
     </a>
 </div>
 <div class="ui segment">
-
+    <div class="six wide field">
+        <label>Договор</label>
+        <input type="text" id="input_document_name">
+    </div>
     <div class="ui inverted segment">
         <button class="ui inverted red button" id="insert_number" onClick="insertKey(this)">Номер договора</button>
         <button class="ui inverted primary button" id="insert_date" onClick="insertKey(this)">Дата</button>

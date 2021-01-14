@@ -11018,6 +11018,7 @@ $(document).ready(function () {
         $('#doc_id').val(id);
         $('#get_pdf').toggleClass('disabled');
         $('#form_inputs').toggleClass('loading');
+        console.log(val_doc_id);
       },
       error: function error() {
         alert('Error AJAX');
@@ -11028,6 +11029,33 @@ $(document).ready(function () {
     var URL = '/contracts/print_pdf?id=';
     var id = doc_id.val();
     window.location.href = URL + id;
+  });
+  $('#refill_form').click(function () {
+    val = $(this).attr('value');
+    $('#form_inputs').addClass('loading');
+    $.ajax({
+      method: "GET",
+      url: '/contracts/view',
+      data: {
+        id: val
+      },
+      success: function success(data) {
+        console.log(data);
+        data = data[0];
+        company.val(data['company_name']);
+        legal_name.val(data['legal_name']);
+        director.val(data['director']);
+        sign.val(data['signature']);
+        bin.val(data['bin']);
+        oop.val(data['legal_type']);
+        document_type.val(data['document']);
+        doc_id.val(data['id']);
+        $('#form_inputs').toggleClass('loading');
+      },
+      error: function error() {
+        alert('сломался');
+      }
+    });
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

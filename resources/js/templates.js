@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     $('#save_document').click(function(){
         var text_data = CKEDITOR.instances.wysiwygeditor.getData();
+        $('#save_document').text("ЩА ВСЁ БУДЕТ");
 
         $.ajax({
             method: "POST",
@@ -13,10 +14,11 @@ $(document).ready(function(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             data: {
-                text: text_data
+                text: text_data,
+                name: function(){ return $('#input_document_name').val() }
             },
             success: function(data){
-                console.log(data);
+                $('#save_document').text("Сохранено");
             },
             error: function(){
                 alert('Error');

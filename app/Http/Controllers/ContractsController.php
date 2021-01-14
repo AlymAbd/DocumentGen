@@ -104,9 +104,4 @@ class ContractsController extends Controller {
         return $pdf;
     }
 
-    public function pdf_convert()
-    {
-
-    }
-
 }
