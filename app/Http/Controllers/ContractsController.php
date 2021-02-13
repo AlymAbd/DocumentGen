@@ -72,8 +72,8 @@ class ContractsController extends Controller {
         $doc = documents::where('is_deleted', '=', false)
                         ->where('id', '=', $r->input('id'))
                         ->with(['template:id,text'])
-                    ->get()
-                    ->toArray()[0];
+                        ->get()
+                        ->toArray()[0];
 
         $temp = $doc['template']['text'];
 
@@ -103,5 +103,4 @@ class ContractsController extends Controller {
 
         return $pdf;
     }
-
 }

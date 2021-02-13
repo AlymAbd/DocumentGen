@@ -21,3 +21,5 @@ mix.js(['resources/js/app.js', 'resources/js/semantic.min.js'], 'public/js')
 mix.js('resources/js/contracts.js', 'public/js');
 mix.js(['resources/js/templates.js'],
         'public/js');
+
+mix.js(['resources/js/contract_templates/create_template.js'], 'public/js');

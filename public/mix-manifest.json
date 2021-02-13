@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/contracts.js": "/js/contracts.js",
+    "/js/create_template.js": "/js/create_template.js",
     "/js/templates.js": "/js/templates.js"
 }

@@ -11030,7 +11030,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\DevEnv\Other\DocumentGen\resources\js\templates.js */"./resources/js/templates.js");
+module.exports = __webpack_require__(/*! D:\DevEnv\Laravel\DocGen\resources\js\templates.js */"./resources/js/templates.js");
 
 
 /***/ })

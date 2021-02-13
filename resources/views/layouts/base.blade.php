@@ -13,7 +13,7 @@
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="@yield('javascript')"></script>
 
-        <script src="/js/ckeditor/adapters/jquery.js"></script>
+        {{-- <script src="/js/ckeditor/adapters/jquery.js"></script> --}}
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
